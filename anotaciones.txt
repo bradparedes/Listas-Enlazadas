@@ -1,0 +1,1434 @@
+static void Main(string[] args)
+{
+    int year = Convert.ToInt16("20");
+    double doble = 2.5;
+    string nombre = "joel";
+    string nombres = "Alex Joel";
+    decimal decimals = 2.07M;
+    float flotante = 8.0F;
+    bool valor = true;
+    char letra = 'A';
+    Decimal de = 28.6M;
+    Boolean valor2 = false;
+    Console.WriteLine(nombres + "{0} {1} {2}", year, letra, valor);
+
+    Console.ReadLine();
+
+
+            //float 7 digitos 32 bits
+            //double 15-16 digitos 64 bits
+            //decimal 28-29 digitos 128 bits
+
+ int valor1 = 9;
+ int valor2 = 9;
+ double valor3 = 10;
+ double valor4 = 11;
+ var data = valor1 != valor2;
+
+ if (valor1 != valor2 || valor3 == valor4) 
+ {
+     Console.WriteLine("Resultado {0}", data);
+ }
+ else
+ {
+     Console.WriteLine("Resultado {0}",data);
+ }
+
+ 
+
+     Console.ReadLine();
+ }
+
+
+
+/*if (data) 
+{
+
+    name = "Alex";
+}
+else
+{
+    name = "Joel";
+    
+}*/
+name = data ? "Alex" : "Joel";
+Console.WriteLine("Resultado {0}", name);
+
+
+Console.ReadLine();
+}
+
+string[] cadenas = new string[5];
+cadenas[0] = "Joel";
+cadenas[1] = "PDHN";
+cadenas[2] = "seidy";
+cadenas[3] = "cindy";
+cadenas[4] = "Alex";
+string[] name = {"Joel", "PDHN", "seidy", "cindy", "Alex" };
+int[] age = new int[5];
+age[0] = 5;
+age[1] = 15;
+age[2] = 50;
+age[3] = 55;
+age[4] = 95;
+int[] ages = { 8, 9, 56, 14, 5 };
+Console.WriteLine("Resultado {0}", cadenas[0] +" "+ name[3] +" age "+ ages[2] );
+
+//Array bidimensional
+double[,] doble2 = new double[2, 2] { {6, 3.0 }, { 6.3, 5.6} };
+//Array tridimensional
+double[,,] doble3 = new double[2, 2,3] { { {3.0, 6.9, 8.9 }, {6.8, 4.5, 7.6 } },{ { 6.0, 6.8, 2.9 }, { 3.8, 4.5, 10.6 } } };
+Console.WriteLine("Resultado {0}", doble3[0,1,2] );
+
+string[] name = { "Alex", "Joel", "Pdhn" };
+int[] age = { 52, 45, 65 };
+//for (int i = 0; i < name.Length; i++)
+//{
+//    Console.WriteLine("Resultado {0}", name[i] + " age " + age[i]);
+//}
+foreach (var item in name)
+{
+    Console.WriteLine("Resultado {0}", item);
+}
+
+
+
+
+Triangulo de pascal
+
+int pisos = 0;
+int[] arreglo = new int[1];
+//Mostramos un mensaje y capturarlos el dato ingresado desde la consola
+Console.WriteLine("Ingrese el numero de pisos");
+pisos = Convert.ToInt16(Console.ReadLine());
+/* Declaramos el primer ciclo for que va recorrer dependiendo el dato ingresado 
+   que está almacenado en la variable pisos*/
+for (int i = 1; i <= pisos; i++)
+{
+    /*Colocamos un arreglo y colocamos la variable i del ciclo for 
+     que será el tamaño que tendrá el arreglo cada vez que el ciclo for 
+     se ejecute */
+    int[] pascal = new int[i];
+    // Ciclo for que se decrementa para formar el triangulo
+    for (int j = pisos; j < i; j--)
+    {
+        Console.Write(" ");
+    }
+    //Ciclo for que genera las sumas de las cifras
+    for (int k = 0; k < i; k++)
+    {
+        //Condicion que evalua la variable del ciclo for
+        if (k == 0 || k == (i - 1))
+        {
+            pascal[k] = 1;
+        }
+        else
+        {
+            // Sumamos los numeros que estan en cada posicion
+            //del arreglo para formar el triangulo
+            pascal[k] = arreglo[k] + arreglo[k - 1];
+        }
+        Console.WriteLine("[" + pascal[k] + "]");
+    }
+    arreglo = pascal;
+    Console.WriteLine("");
+}
+Console.ReadLine();
+
+
+
+
+
+
+
+var data = "Joel";
+switch (data)
+{
+    case "Joel":
+        Console.WriteLine("Joel {0}", data);
+        break;
+    case "Alex":
+        Console.WriteLine("Alex {0}", data);
+        break;
+    default:
+        Console.WriteLine("Case {0}", "default");
+        break;
+}
+
+
+
+var data = 3;
+var result = data switch
+{
+    1 => "Alex" ,
+    2 => "Joel" ,
+    3 => "PDHN"
+};
+Console.WriteLine(result);
+
+
+
+
+var (a,b,opcion) = (2,6,"+");
+var result = opcion switch
+{
+    "+" => a==b ,
+    "-" => a<b ,
+    "*" => b>a
+};
+Console.WriteLine("Resultado{0}",result);
+
+
+
+var valor = true;
+var count = 1;
+while (valor)
+{
+    if (count == 6)
+    {
+        valor = false;
+    }
+    count++;
+    Console.WriteLine("Ejecución"{0}", count);
+
+
+
+var valor = true;
+var count = 1;
+while (valor)
+{
+    if (count == 6)
+    {
+        break;
+    }
+    count++;
+    Console.WriteLine("Ejecución del while {0}", count);
+}
+count = 0;
+valor = true;
+Console.WriteLine("");
+do
+{
+    if (count == 6)
+    {
+        break;
+    }
+    count++;
+    Console.WriteLine("Ejecucion de do while {0}", count);
+} while (true);
+
+
+
+
+String name1 = "Alex";
+String name2 = "Joel";
+String name3 = name1;
+name1 += name2;
+Console.WriteLine("Name: {0}",name3);
+
+
+
+ //Interpolacion de cadenas
+ var nombre = (nombre1: "Alex", age1: 23,nombre2:"Joel");
+ Console.WriteLine($"{nombre.nombre1} age {nombre.age1} {nombre.nombre2}");
+ //Formato compuesto
+ Console.WriteLine("Nombres {1} age {0}", nombre.nombre2,nombre.age1);
+
+
+
+
+//Una subcadena es cualquier secuencia de caracteres que está contenida en una cadena.
+var curso = "Curso de C# desde cero";
+
+Console.WriteLine("Cadena {0}",curso.Substring(9,11));
+var sub = curso.Remove (5,11);
+Console.WriteLine(sub);
+
+
+
+
+var curso = "Curso de C# desde cero";
+var name = "Curso de C# desde cero";
+//Una subcadena es cualquier secuencia de caracteres que está contenida en una cadena.
+//Console.WriteLine("Cadena {0}",curso.Substring(9,11));
+/// var sub = curso.Remove (5,11);
+//var data = curso.IndexOf("desde");
+foreach (var item in curso)
+
+
+
+
+
+var names = new StringBuilder("Alex Pagoada");
+//names[0] = 'a';
+names.AppendLine();
+names.Append("Joel").Append(" ").Append("Suazo");
+names.AppendLine();
+names.AppendFormat("Age {0}",50);
+//names.Capacity = 17;
+Console.WriteLine(names.ToString());
+{
+    Console.WriteLine(item);
+}
+//var data = curso.Equals(name);
+//Console.WriteLine(data);
+
+
+var names = new StringBuilder("Alex Pagoada");
+//names[0] = 'a';
+names.Append(" ");
+names.Append("Joel");
+names.Capacity = 17;
+Console.WriteLine(names.ToString());
+
+
+
+
+static void Main()
+{
+    var data = new Program();
+    data.metodoPrivado();
+}
+private  void metodoPrivado()
+{
+    Console.WriteLine("Hola");
+    Console.ReadLine();
+
+
+
+var data = new Program();
+            var name = data.metodoPrivado();
+            //data.metodoPrivado
+            Console.WriteLine(name);
+            Console.ReadLine();
+        }
+        private  int metodoPrivado()
+        {
+            return Convert.ToInt16("52");
+        }
+
+
+static void Main()
+{
+    var data = new Program();
+    var name = data.metodoPrivado();
+    String name;
+    Console.WriteLine(name);
+    Console.ReadLine();
+}
+
+
+
+private String cadena;
+private String verMayusculas = "";
+private String verminusculas = "";
+private int n;
+private string[] Mayusculas;
+private string[] Minusculas;
+private string[] tempMy;
+private string[] tempMn;
+
+private String mayusculas()
+{
+    for (int i = 0; i<n; i++)
+    {
+        //IsUpper indica si un caracter unicode está categorizado como una letra mayuscula
+        if (Char.IsUpper(cadena[i]))
+        {
+            tempMy[i] = Convert.ToString(cadena[i]);
+        }
+    }
+    for (int i = 0; i < tempMy.Length; i++)
+    {
+        if (tempMy[i] != null)
+        {
+            Mayusculas[i] = tempMy[i];
+            verMayusculas = verMayusculas + $"{verMayusculas}, {Mayusculas[i]}" + Mayusculas[i];
+        }
+        return verMayusculas;
+    }
+
+public String minusculas()
+{
+    for (int i = 0; i < n; i++)
+    {
+        //IsUpper indica si un caracter unicode está categorizado como una letra mayuscula
+        if (Char.IsLower(cadena[i]))
+        {
+            tempMn[i] = Convert.ToString(cadena[i]);
+        }
+    }
+    for (int i = 0; i < tempMn.Length; i++)
+    {
+        if (tempMn[i] != null)
+        {
+            Minusculas[i] = tempMn[i];
+            verminusculas = $"{verminusculas}, {Minusculas[i]}";
+        }
+    }
+    return verminusculas;
+}
+
+static void Main()
+{
+    var cadena = Console.ReadLine();
+    var data = new Program(cadena);
+    Console.WriteLine("Las letras Mayusculas son: " + data.mayusculas()
+        + "\n\n" + "Las letras Minusculas son: " + data.minusculas());
+    Console.ReadLine();
+}
+
+
+
+
+
+  static void Main ()
+  {
+      Object[] parametros = { "Alex", 25,true};
+      new Program().metodo(parametros);
+      Console.ReadLine();
+  }
+  private void metodo(object[] parametros)
+  {
+      String nombre = (string)parametros[0];
+      int edad= (int)parametros[1];
+      bool valor = (bool)parametros[2];
+  }
+
+
+
+static void Main ()
+{
+    int edad = 56;
+    int data = 67;
+    new Program().metodo(data);
+    Console.ReadLine();
+}
+private void metodo(in int valor)
+{
+    //valor = 50;    
+    Console.WriteLine(valor);
+}
+
+
+
+static void Main ()
+{
+    
+    int data = 0;
+    new Program().metodo(out data);
+    Console.WriteLine(data);
+    Console.ReadLine();
+}
+private void metodo(out int valor)
+{
+    valor = 50+ 20;    
+    
+}
+
+
+
+            static void Main()
+            {
+                
+                int data = 0;
+                new Program().metodo(out data);
+                Console.WriteLine(data);
+                Console.ReadLine();
+            }
+            private void metodo(out int valor)
+            {
+                int funcion();
+                
+                int funcion ()
+                {
+                    return 50 +20 ;
+                }
+            }
+
+
+static void Main()
+{
+    
+    //int data;
+    String nombre;
+    //new Program().metodo(out data);
+    mensaje();
+    Console.WriteLine(nombre);
+    void mensaje() => nombre = "Alex Joel"; 
+    Console.ReadLine();
+}
+private void metodo(out int valor)
+{
+    valor = funcion();
+
+    static int funcion() => 50 + 20;
+    
+}
+
+
+
+{
+    int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 6, 5, 9, 2 };
+    int[] list = new int[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        int count = 0;
+        for (int j = 0; j < array.Length; j++)
+        {
+            if (array[i] == array[j])
+            {
+                count++;
+                if (numero(array[i]))
+                {
+                    list[i] = array[i];
+                }
+            }
+
+        }
+        if (list[i] != 0)
+        {
+            Console.WriteLine(list[i] + " se repite:" + count);
+        }
+        bool numero(int num)
+        {
+            for (int i = 0; i < list.Length; i++)
+            {
+                if (list[i] == num)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    }
+
+}
+
+
+
+
+static void Main()
+{
+    var data = new Conversor();
+    Conversor.velocidad = 3.0;
+    var data1 = new Conversor();
+}
+class Conversor 
+{
+    public static double velocidad;
+}
+
+
+
+        static void Main()
+        {
+            var data = new Conversor();
+            data.Conversor1();
+            //Conversor.velocidad = 3.0;
+            var data1 = new Conversor();
+            data1.Conversor2();
+            //Conversor.Conversor1();
+            //Conversor.Conversor2();
+        }
+        class Conversor 
+        {
+            public double velocidad;
+
+            public void Conversor1()
+            {
+                velocidad += 20;
+            }
+            public void Conversor2()
+            {
+                velocidad += 78;
+	    }
+
+
+static void Main()
+{
+    //var data = new Conversor();
+    //data.Conversor1();
+    //Conversor.velocidad = 3.0;
+    //var data1 = new Conversor();
+    //data1.Conversor2();
+    //Conversor.Conversor1();
+    //Conversor.Conversor2();
+}
+class Conversor
+{
+    
+    private double velocidad;
+
+    public void Conversor1()
+    {
+        Console.WriteLine("Introduzca una velocidad en m/s");
+        velocidad = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine($"{velocidad}  m/s =  {velocidad * 3600 / 1000 } + km/h");
+    }
+    public void Conversor2()
+    {
+        Console.WriteLine("Introduzca una velocidad en km/h");
+        velocidad = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine($"{velocidad}  km/h =  {velocidad * 1000 / 3600 } m/s");
+
+
+
+static void Main()
+{
+    var data = new Program();
+    data.metodo("C#");
+}
+private void metodo(string curso , String nombre = "Joel", int cantidad = 69)
+{
+    Console.WriteLine(nombre);
+
+
+
+
+
+static void Main()
+{
+    var data = new Program();
+    data.metodo(null,null);
+}
+private void metodo(string curso , int? cantidad, String nombre = "Joel")
+{
+    Console.WriteLine($"{curso} {cantidad}");
+}
+
+
+class Program
+{
+    readonly int valor;
+    const int VALOR = 98;
+    public Program() 
+    {
+        valor = 10;
+        
+    }
+    static void Main()
+    {
+        var data = new Program();
+        Console.WriteLine($"{VALOR}");
+    }
+
+
+
+class Program
+{
+    static void Main()
+    {
+        var data = new estudiante();
+        data.Nombre = "Alex";
+    }
+    
+}
+public class estudiante
+{
+    private String nombre;
+    public String Nombre
+    {
+        set { nombre = value;  }
+    }
+}
+
+
+
+public class School
+{
+    private List<estudiante> students ;
+    public School() 
+    {
+        students = new List<estudiante>();
+    }
+    pùblic void addStudent(estudiante nuevoestudiante) 
+    {
+        students.Add(nuevoestudiante);
+    }
+    public bool buscarPorNombre (String name) 
+    {
+        bool encontrado = false;
+        int i = 0;
+        while (encontrado == false && i < students.Count)
+        {
+            if (students[i].Nombre.Equals(name)) 
+            {
+                encontrado = true;
+            }
+            else 
+            {
+                i++;
+            }
+        }
+    }
+}
+
+
+Búsqueda de datos: 
+
+    class Program
+    {
+        static void Main()
+        {
+            var s1 = new estudiante() {
+                Nombre = "Alex",
+                Edad = 33,
+                Calificacion = 50.6
+            };
+            var s2 = new estudiante()
+            {
+                Nombre = "Joel",
+                Edad = 38,
+                Calificacion = 80.6
+            };
+            var s3 = new estudiante()
+            {
+                Nombre = "PDHN",
+                Edad = 23,
+                Calificacion = 60.6
+            };
+            var school = new School();
+            school.addStudent(s1);
+            school.addStudent(s2);
+            school.addStudent(s3);
+            bool valor = false;
+            do 
+            {
+                Console.WriteLine("ingrese el nombre");
+                String name = Console.ReadLine();
+                valor = school.buscarPorNombre(name);
+
+            }while (valor);
+            Console.ReadKey();
+        }
+        
+    }
+}
+
+
+public class estudiante
+{
+    public int Edad {  get; set; }
+    public String Nombre{ get; set; }
+    public double Calificacion { get; set; }
+}
+
+
+public class School
+{
+    private List<estudiante> students ;
+    public School() 
+    {
+        students = new List<estudiante>();
+    }
+    public void addStudent(estudiante nuevoestudiante) 
+    {
+        students.Add(nuevoestudiante);
+    }
+    public bool buscarPorNombre (String name) 
+    {
+        bool encontrado = false;
+        int i = 0;
+        while (encontrado == false && i < students.Count)
+        {
+            if (students[i].Nombre.Equals(name)) 
+            {
+                encontrado = true;
+            }
+            else 
+            {
+                i++;
+            }
+        }
+        if (encontrado)
+        {
+            Console.WriteLine("Name: " + students[i].Nombre + "\n"
+            + "Age: " + students[i].Edad + "\n"
+            + "Qualification: " + students[i].Calificacion);
+            return false;
+        }
+        else
+        {
+            Console.WriteLine("No existe el nombre, intente nuevamente...!");
+            return true;
+        }
+    }
+}
+
+
+
+
+
+
+
+static void Main()
+{
+    List<Object> lista = new List<Object>();
+    lista.Add("Alex");
+    lista.Add(32);
+    lista.Add(true);
+    lista.Remove(32);
+    Console.WriteLine(lista.Count);
+    Console.ReadKey();
+}
+
+
+
+static void Main()
+{
+    List<Object> lista = new List<Object>();
+    lista.Add("Alex");
+    lista.Add(32);
+    lista.Add(true);
+    //lista.Remove(32);
+    //lista.ForEach(item => {
+    //   Console.WriteLine(item);
+    //});
+    //for (int i = 0; i < lista.Count; i++)
+    //{
+    //    Console.WriteLine(lista[i]);
+    //}
+    int j = 0;
+    for (; ; ) 
+    {
+        if (j < lista.Count)
+        {
+            Console.WriteLine(lista[j]);
+            j++;
+        }
+        else
+            break;
+    }
+    Console.ReadKey();
+
+
+
+
+
+
+static void Main()
+{
+    List<Object> lista = new List<Object>();
+    lista.Add("Alex 1");
+    lista.Add(32);
+    lista.Add("Alex");
+    lista.Add(true);
+    lista.Add("Alex");
+    lista.Add(true);
+    //lista.ForEach(item => Console.WriteLine(item));
+    lista.Insert(2, "Joel");
+    //lista.Clear();
+    lista.Reverse();
+    Console.WriteLine(lista.Exists(e => e.Equals("Joel")));
+    foreach (var item in lista) 
+    {
+        Console.WriteLine(item);
+    }
+    Console.ReadKey();
+}
+
+
+
+static void Main()
+{
+    List<Object> lista = new List<Object>();
+    LinkedList<String> nodos = new LinkedList<String>();
+    
+    Console.ReadKey();
+}
+
+public class nodo
+{
+    public int dato;
+    public nodo siguiente;
+    public nodo(int dato);
+    {
+        this.dato = dato;
+        this.siguiente = null
+    }
+}
+
+
+
+public class Listanodo
+{
+    private nodo primero;
+    private int size;
+    public Listanodo() 
+    {
+        primero = null;
+        this.size = 0;
+    }
+    public void addnodo(int dato) 
+    {
+        nodo nuevo = new nodo(dato);//add el nodo
+        nodo valor1, valor2;
+        if (primero == null) 
+        {
+            primero = nuevo;
+            nuevo.siguiente = null;
+        }
+    }
+}
+
+
+
+public class Listanodo
+{
+    private nodo primero;
+    private int size;
+    public Listanodo() 
+    {
+        primero = null;
+        this.size = 0;
+    }
+    public void addnodo(int dato) 
+    {
+        nodo nuevo = new nodo(dato);//add el nodo
+        nodo valor1, valor2;
+        if (primero == null) 
+        {
+            primero = nuevo;
+            nuevo.siguiente = null;
+        }
+        else 
+        {
+            valor1 = primero;
+            while (valor1 != null)
+            {
+                valor2 = valor1.siguiente;
+                //Condicion que verifica si el numero entrante debe de ir primero
+                if (nuevo.dato <= valor1.dato)
+                {
+                    nuevo.siguiente = primero;
+                    primero = nuevo;
+                    break;
+                }
+                else 
+                {
+                    //Condicion que verifica si el numero entrante debe de ir al ultimo
+                    if (nuevo.dato > valor1.dato && valor2 == null)
+                    {
+                        valor1.siguiente = nuevo;
+                        nuevo.siguiente = null;
+                        break;
+                    }
+                    else 
+                    {
+                        //Condicion que verifica si el numero entrante debe de ir en medio de otro nodo
+                        if (valor1.dato < nuevo.dato && valor2.dato >= nuevo.dato)
+                        {
+                            valor1.siguiente = nuevo;
+                            nuevo.siguiente = valor2;
+                            break;
+                        }
+                        else 
+                        {
+                            valor1 = valor1.siguiente;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+class Program
+{
+
+
+    static void Main()
+    {
+        var list = new ListaNodo();
+        list.ListaVacia();
+        list.addNodo(1);
+        list.addNodo(3);
+        list.addNodo(2);
+        list.addNodo(4);
+        list.ListaVacia();
+        Console.ReadKey();
+    }
+    
+}
+
+
+ public class Nodo
+ {
+     public int dato;
+     public Nodo siguiente;
+     public Nodo (int dato)
+     {
+         this.dato = dato;
+         this.siguiente = null;
+     }
+ }
+
+
+
+public class ListaNodo
+{
+    private Nodo primero;
+    private int size;
+    public ListaNodo() 
+    {
+        primero = null;
+        this.size = 0;
+    }
+    public void addNodo(int dato) 
+    {
+        Nodo nuevo = new Nodo(dato);//add el nodo
+        Nodo valor1, valor2;
+        if (primero == null) 
+        {
+            primero = nuevo;
+            nuevo.siguiente = null;
+        }
+        else 
+        {
+            valor1 = primero;
+            while (valor1 != null)
+            {
+                valor2 = valor1.siguiente;
+                //Condicion que verifica si el numero entrante debe de ir primero
+                if (nuevo.dato <= valor1.dato)
+                {
+                    primero = nuevo;
+                    nuevo.siguiente = primero;
+                    break;
+                }
+                else 
+                {
+                    //Condicion que verifica si el numero entrante debe de ir al ultimo
+                    if (nuevo.dato > valor1.dato && valor2 == null)
+                    {
+                        valor1.siguiente = nuevo;
+                        nuevo.siguiente = null;
+                        break;
+                    }
+                    else 
+                    {
+                        //Condicion que verifica si el numero entrante debe de ir en medio de otro nodo
+                        if (valor1.dato < nuevo.dato && valor2.dato >= nuevo.dato)
+                        {
+                            valor1.siguiente = nuevo;
+                            nuevo.siguiente = valor2;
+                            break;
+                        }
+                        else 
+                        {
+                            valor1 = valor1.siguiente;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public void ListaVacia() 
+    {
+        if (primero == null)
+        {
+            Console.WriteLine("La lista esta vacio");
+        }
+        else 
+        {
+            Console.WriteLine("La lista tiene datos");
+        }
+    }
+
+
+
+//esto va en la clase ListaNodo.cs
+public void Listar() 
+{
+    Nodo actual = primero;
+    while (actual !=null) 
+    {
+        Console.Write($"[" + actual.dato + "]->");
+        actual = actual.siguiente;
+    }
+}
+
+//esto va en la clase Program.cs
+static void Main()
+{
+    var list = new ListaNodo();
+    list.ListaVacia();
+    list.addNodo(1);
+    list.addNodo(3);
+    list.addNodo(2);
+    list.addNodo(4);
+    list.Listar();
+    Console.ReadKey();
+}
+
+
+static void Main()
+{
+    var list = new ListaNodo();
+    list.ListaVacia();
+    list.addNodo(1);
+    list.addNodo(3);
+    list.addNodo(2);
+    list.addNodo(4);
+    list.Listar();
+    list.DeleteUltimo();
+    Console.WriteLine();
+    list.Listar();
+    Console.ReadKey();
+}
+
+
+public void DeletePrimero()
+{
+    primero = primero.siguiente; //Elimina el primer nodo
+}
+public void DeleteUltimo()
+{
+    Nodo anterior = primero;
+    Nodo actual = primero;
+    while (actual.siguiente != null) 
+    {
+        anterior = actual;
+        actual = actual.siguiente;
+    }
+    anterior.siguiente = null;
+}
+
+
+static void Main()
+{
+    var list = new ListaNodo();
+    list.ListaVacia();
+    list.addNodo(1);
+    list.addNodo(3);
+    list.addNodo(2);
+    list.addNodo(4);
+    list.Listar();
+    list.DeletePosicionNodo(2);
+    Console.WriteLine();
+    list.Listar();
+    Console.ReadKey();
+}
+
+
+
+public void DeletePosicionNodo(int p) 
+{
+    Nodo anterior = primero;
+    Nodo actual = primero;
+    int dato = 0;
+    if (p > 0) 
+    {
+        while (dato != p && actual.siguiente != null)
+        {
+            anterior = actual;
+            actual = actual.siguiente;
+            dato++;
+        }
+        anterior.siguiente = actual.siguiente;
+    }
+}
+
+
+static void Main()
+{
+    var list = new ListaNodo();
+    list.ListaVacia();
+    list.addNodo(1);
+    list.addNodo(3);
+    list.addNodo(2);
+    list.addNodo(4);
+    list.Listar();
+    list.Buscar(3);
+    Console.WriteLine();
+    list.Listar();
+    Console.ReadKey();
+}
+
+
+
+
+public Nodo Buscar (int n) 
+{
+    Nodo p = primero;
+    if (p == null)
+    {
+        Console.WriteLine("La lista no tiene datos");
+    }
+    else 
+    {
+        while (p.siguiente != null || p.siguiente == null)
+        {
+            if (p.dato == n)
+            {
+                return p;
+            }
+            else
+            {
+                if (p.siguiente == null)
+                {
+                    return null;
+                }
+            }
+            p = p.siguiente;
+        }
+    }
+    return null;
+
+
+
+public void Sustituir (int orig, int nuevo) 
+{
+    Nodo pos = Buscar(orig);
+    if(pos != null || pos == null) 
+    {
+        pos.dato = nuevo;
+    }
+}
+public int Size()
+{
+    return size;
+}
+
+
+
+static void Main()
+{
+    var list = new ListaNodo();
+    list.ListaVacia();
+    list.addNodo(1);
+    list.addNodo(3);
+    list.addNodo(2);
+    list.addNodo(4);
+    list.Listar();
+    list.Sustituir(3,6);
+    Console.WriteLine(list.Size());
+    list.Listar();
+    Console.ReadKey();
+}
+
+
+HERENCIA DE CLASES
+
+class Program : Menu
+{
+
+
+    static void Main()
+    {
+        new Program().getProducto();
+        Console.ReadKey();
+    }
+    
+}
+
+public class Menu
+{
+    public void getProducto() 
+    {
+        Console.WriteLine("Curso de C# desde cero");
+    }
+}
+
+
+
+class Program : Menu
+{
+    public Program(String s) : base(s)
+    {
+        
+    }
+
+    static void Main()
+    {
+        new Program("Empresa: PDHN").getProducto();
+        Console.ReadKey();
+    }
+    protected  void getProducto()
+    {
+        Console.WriteLine("Curso de C# desde cero");
+    }
+}
+
+
+
+public class Menu
+{
+    private string s;
+
+    public Menu(string s)
+    {
+        this.s = s;
+    }
+
+    protected  void getProducto() 
+    {
+        Console.WriteLine(s);
+    }
+}
+
+
+
+
+class Program : Menu
+{
+    public Program(String s) : base(s)
+    {
+        
+    }
+
+    static void Main()
+    {
+        new Program("Empresa: PDHN").getProducto();
+        Console.ReadKey();
+    }
+    /*protected override void getProducto()
+    {
+        Console.WriteLine();
+    }*/
+}
+
+public class Menu : Principal
+{
+    private string s;
+
+    public Menu(string s)
+    {
+        this.s = s;
+        //var O = new Principal();
+    }
+
+    public override void getProducto()
+    {
+        Console.WriteLine(s);
+    }
+
+    /*protected virtual void getProducto() 
+    {
+        Console.WriteLine(s);
+    }*/
+}
+
+public abstract class Principal
+{
+    public abstract void getProducto();
+}
+
+
+
+class Program
+{
+    
+
+    static void Main()
+    {
+        Almacen al = new Golosinas();
+        
+        Console.ReadKey();
+    }
+    /*protected override void getProducto()
+    {
+        Console.WriteLine();
+    }*/
+}
+
+public class Menu : Almacen, IProductos
+{
+    private string s;
+
+    public Menu(string s)
+    {
+        this.s = s;
+        //getProducto();
+    }
+
+
+
+    public void addProductos()
+    {
+
+    }
+
+    /*protected virtual void getProducto() 
+    {
+        Console.WriteLine(s);
+    }*/
+}
+interface IProductos
+{
+    void addProductos();
+}
+
+
+public class Frutas : Almacen
+{
+    public override void addProducto(Producto productos)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override List<Producto> getProducto(string valor)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public abstract class Almacen
+{
+    public abstract List<Producto> getProducto(String valor);
+    public abstract void addProducto(Producto productos
+}
+
+
+public class Golosinas : Almacen
+{
+    public override void addProducto(Producto productos)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override List<Producto> getProducto(string valor)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class Producto
+{
+    public string ID {  get; set; }
+    public string Nombre { get; set; }
+    public string Precio { get; set; }
+}
+
+public class Menu : Almacen, IProductos
+{
+    private string s;
+
+    public Menu(string s)
+    {
+        this.s = s;
+        //getProducto();
+    }
+
+
+
+    public void addProductos()
+    {
+
+    }
+
+    /*protected virtual void getProducto() 
+    {
+        Console.WriteLine(s);
+    }*/
+}
+interface IProductos
+{
+    void addProductos();
+}
