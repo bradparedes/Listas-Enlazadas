@@ -10,7 +10,15 @@ Este repositorio contiene la solución para el proyecto de listas enlazadas
  - .NET SDK
  - - Git
 ## Instalación 
-1. Clona este repositorio: ```bash git clone https://github.com/bradparedes/Listas-enlazadas.git
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/bradparedes/Listas-enlazadas.git
+3. Abre el proyecto en Visual Studio 2022.
+
+4. Restaura los paquetes NuGet:
+```bash
+  dotnet restore
+```
 
 ## Uso
 Compila y ejecuta el proyecto desde Visual Studio 2022.
