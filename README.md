@@ -27,7 +27,10 @@ Sigue las instrucciones del curso para completar los ejercicios y proyectos.
 
 ## Estructura del Proyecto
 Nodo.cs: Define la clase Nodo que representa un nodo en la lista enlazada.
-
 ListaEnlazada.cs: Implementa la clase ListaEnlazada que maneja las operaciones de la lista enlazada (agregar, eliminar, buscar, etc.).
-
 Program.cs: Contiene el punto de entrada de la aplicación y ejemplos de uso de la lista enlazada.
+
+## Autor
+**Bradley Presley Castañeda Paredes**
+[GitHub] (https://github.com/bradparedes)
+[Linkedin] (https://linkedin.com/in/bradley-castañeda-1577b5236)
