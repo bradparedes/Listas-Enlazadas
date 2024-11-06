@@ -12,12 +12,12 @@ Este repositorio contiene la solución para el proyecto de listas enlazadas
 ## Instalación 
 1. Clona este repositorio: ```bash git clone https://github.com/bradparedes/Listas-enlazadas.git
 
-##Uso
+## Uso
 Compila y ejecuta el proyecto desde Visual Studio 2022.
 
 Sigue las instrucciones del curso para completar los ejercicios y proyectos.
 
-##Estructura del Proyecto
+## Estructura del Proyecto
 Nodo.cs: Define la clase Nodo que representa un nodo en la lista enlazada.
 
 ListaEnlazada.cs: Implementa la clase ListaEnlazada que maneja las operaciones de la lista enlazada (agregar, eliminar, buscar, etc.).
